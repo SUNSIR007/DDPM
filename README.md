@@ -77,13 +77,24 @@
     python ddpm_conditional.py
 ```
 
+## 模型文件下载
+
+由于模型文件较大（约90MB），无法直接上传到GitHub。训练好的模型文件包括：
+
+- `ckpt.pt` - 最新的模型权重
+- `ema_ckpt.pt` - EMA（指数移动平均）模型权重（推荐使用）
+- `interrupted_ckpt.pt` - 中断训练的检查点
+- `interrupted_ema_ckpt.pt` - 中断训练的EMA检查点
+
+请将下载的模型文件放置在 `models/DDPM_conditional/` 目录下。
+
 ## 采样，Sampling
 
 ```python
     n = 10
     device = "cuda"
     model = UNet_conditional(num_classes=10).to(device)
-    ckpt = torch.load("conditional_ema_ckpt.pt")
+    ckpt = torch.load("models/DDPM_conditional/ema_ckpt.pt")
     model.load_state_dict(ckpt)
     diffusion = Diffusion(img_size=64, device=device)
     y = torch.Tensor([6] * n).long().to(device)
