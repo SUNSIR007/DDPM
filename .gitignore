@@ -1,0 +1,33 @@
+__pycache__
+models/DDPM_conditional/optim.pt
+datasets/
+
+# Python virtual environment
+ddpm_env/
+venv/
+env/
+.env/
+
+# TensorBoard logs
+runs/
+logs/
+
+# Model checkpoints (if large)
+*.pth
+*.pt
+*.ckpt
+
+# Large data files
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
